@@ -2,6 +2,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Alura\Cursos\Infra\EntityManagerCreator;
+use DI\ContainerBuilder;
+use Doctrine\ORM\EntityManagerInterface;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7Server\ServerRequestCreator;
 use Psr\Http\Server\RequestHandlerInterface;
@@ -35,8 +38,10 @@ $creator = new ServerRequestCreator(
 
 $request = $creator->fromGlobals();
 
+$container = require __DIR__ . '/../config/dependencies.php';
+
 /** @var RequestHandlerInterface $controlador */
-$controlador = new $classeControladora();
+$controlador = $container->get($classeControladora);
 $response = $controlador->handle($request);
 
 foreach ($response->getHeaders() as $name => $values) {
