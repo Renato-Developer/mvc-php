@@ -16,12 +16,9 @@ class ListarCursos implements RequestHandlerInterface
 
     private $repositorioDeCursos;
 
-    public function __construct()
+    public function __construct(EntityManagerCreator $entityManager)
     {
-        $entityManager = (new EntityManagerCreator())
-            ->getEntityManager();
-        $this->repositorioDeCursos = $entityManager
-            ->getRepository(Curso::class);
+        $this->repositorioDeCursos = $entityManager->getEntityManager()->getRepository(Curso::class);
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface
