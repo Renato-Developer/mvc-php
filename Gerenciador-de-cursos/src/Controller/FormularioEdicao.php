@@ -5,8 +5,12 @@ namespace Alura\Cursos\Controller;
 use Alura\Cursos\Entity\Curso;
 use Alura\Cursos\Helper\RenderizadorDeHtmlTrait;
 use Alura\Cursos\Infra\EntityManagerCreator;
+use Nyholm\Psr7\Response;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
-class FormularioEdicao implements InterfaceControladorRequisicao
+class FormularioEdicao implements RequestHandlerInterface
 {
     use RenderizadorDeHtmlTrait;
 
@@ -23,24 +27,23 @@ class FormularioEdicao implements InterfaceControladorRequisicao
             ->getRepository(Curso::class);
     }
 
-    public function processaRequisicao(): void
+    public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $id = filter_input(
-            INPUT_GET,
-            'id',
-            FILTER_VALIDATE_INT
-        );
+        $queryString = $request->getQueryParams();
+
+        $id = filter_var($queryString['id'], FILTER_VALIDATE_INT);
 
         if (is_null($id) || $id === false) {
-            header('Location: /listar-cursos');
-            return;
+            return new Response(302, ['location' => '/listar-cursos']);
         }
 
         $curso = $this->repositorioCursos->find($id);
 
-        echo $this->renderizaHtml('Cursos/formulario.php', [
+        $html = $this->renderizaHtml('Cursos/formulario.php', [
             'curso' => $curso,
             'titulo' => 'Alterar curso ' . $curso->getDescricao(),
         ]);
+
+        return new Response(200, [], $html);
     }
 }
