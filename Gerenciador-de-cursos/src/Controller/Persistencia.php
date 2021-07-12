@@ -47,7 +47,6 @@ class Persistencia implements RequestHandlerInterface
 
         $this->entityManager->flush();
 
-
         return new Response(302, ['location' => '/listar-cursos']);
     }
 }

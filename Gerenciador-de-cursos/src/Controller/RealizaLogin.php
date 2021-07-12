@@ -13,14 +13,12 @@ use Psr\Http\Server\RequestHandlerInterface;
 class RealizaLogin implements RequestHandlerInterface
 {
     use FlashMessageTrait;
-    private $repositorioDeUsuario;
 
-    public function __construct()
+    private $entityManager;
+
+    public function __construct(EntityManagerCreator $entityManager)
     {
-        $entityManager = (new EntityManagerCreator())
-            ->getEntityManager();
-        $this->repositorioDeUsuario = $entityManager
-            ->getRepository(Usuario::class);
+        $this->entityManager = (new EntityManagerCreator())->getEntityManager();
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface
@@ -35,8 +33,10 @@ class RealizaLogin implements RequestHandlerInterface
             return new Response(302, ['location' => '/login']);
         }
 
+        $repositorioDeUsuario = $this->entityManager->getRepository(Usuario::class);
+
         /**@var Usuario $usuario*/
-        $usuario = $this->repositorioDeUsuario->findOneBy(['email' => $email]);
+        $usuario = $repositorioDeUsuario->findOneBy(['email' => $email]);
 
         if(is_null($usuario) || !$usuario->senhaEstaCorreta($senha)){
             $this->defineMensagem('danger', 'Email ou senha inválidos');
