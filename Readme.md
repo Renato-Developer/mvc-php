@@ -60,14 +60,14 @@ utilizando a PSR11 que nos possibilita criar um CONTAINER DE INJEÇÃO DE DEPEND
 
 ---
 
->This project was developed with ❤️ by **[@RenatoAugusto](https://www.linkedin.com/in/renato-augusto-php/)**<br>
+>This project was developed with ❤️ by **[@RenatoAugusto](https://www.linkedin.com/in/RenatoAugustoFS/)**
 If it helped you, give it ⭐, it will help me too 😉
 
 ---
 
    <div align="center">
 
-[![Linkedin Badge](https://img.shields.io/badge/-Renato%20Augusto-292929?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/renato-augusto-php/)](https://www.linkedin.com/in/renato-augusto-php/)
+[![Linkedin Badge](https://img.shields.io/badge/-Renato%20Augusto-292929?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/RenatoAugustoFS/)](https://www.linkedin.com/in/RenatoAugustoFS/)
 
    </div>
 
