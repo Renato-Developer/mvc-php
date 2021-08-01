@@ -35,10 +35,10 @@ utilizando a PSR11 que nos possibilita criar um CONTAINER DE INJEÇÃO DE DEPEND
    $ git clone https://github.com/Renato-Developer/mvc-php-PSRs-and-best-practices.git
 
    - Check the directory:
-   $ cd /var/www/html/<NameOfProject>
+   $ cd /var/www/html/<ProjectName>
 
    - Open your browser in:
-   http://localhost/<NameOfProject>
+   http://localhost/<ProjectName>
    ```
 
 ---
