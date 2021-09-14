@@ -13,5 +13,8 @@
         "psr-4": {
             "Alura\\Cursos\\": "src/"
         }
+    },
+    "require-dev": {
+        "behat/behat": "^3.8"
     }
 }

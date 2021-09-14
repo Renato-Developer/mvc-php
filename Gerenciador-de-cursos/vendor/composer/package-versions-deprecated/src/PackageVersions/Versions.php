@@ -77,7 +77,19 @@ final class Versions
   'symfony/stopwatch' => 'v5.3.0@313d02f59d6543311865007e5ff4ace05b35ee65',
   'symfony/string' => 'v5.3.3@bd53358e3eccec6a670b5f33ab680d8dbe1d4ae1',
   'symfony/var-exporter' => 'v5.3.3@903c2c0babd6267de5bcb2995e8fc1efb5f01f1f',
-  '__root__' => 'dev-master@b216935f8ad2c5e24602e8afbb5957033c037d01',
+  'behat/behat' => 'v3.8.1@fbb065457d523d9856d4b50775b4151a7598b510',
+  'behat/gherkin' => 'v4.8.0@2391482cd003dfdc36b679b27e9f5326bd656acd',
+  'behat/transliterator' => 'v1.3.0@3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc',
+  'psr/event-dispatcher' => '1.0.0@dbefd12671e8a14ec7f180cab83036ed26714bb0',
+  'symfony/config' => 'v5.3.4@4268f3059c904c61636275182707f81645517a37',
+  'symfony/dependency-injection' => 'v5.3.7@a665946279f566d94ed5eb98999cfa65c6fa5a78',
+  'symfony/event-dispatcher' => 'v5.3.7@ce7b20d69c66a20939d8952b617506a44d102130',
+  'symfony/event-dispatcher-contracts' => 'v2.4.0@69fee1ad2332a7cbab3aca13591953da9cdb7a11',
+  'symfony/polyfill-php81' => 'v1.23.0@e66119f3de95efc359483f810c4c3e6436279436',
+  'symfony/translation' => 'v5.3.7@4d595a6d15fd3a2c67f6f31d14d15d3b7356d7a6',
+  'symfony/translation-contracts' => 'v2.4.0@95c812666f3e91db75385749fe219c5e494c7f95',
+  'symfony/yaml' => 'v5.3.6@4500fe63dc9c6ffc32d3b1cb0448c329f9c814b7',
+  '__root__' => 'dev-master@c87151d1bfe4a579ccb95e8b9609b03c5d7ba444',
 );
 
     private function __construct()
