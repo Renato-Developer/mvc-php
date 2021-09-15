@@ -10,6 +10,9 @@ use Alura\Cursos\Controller\ListarCursos;
 use Alura\Cursos\Controller\Logout;
 use Alura\Cursos\Controller\Persistencia;
 use Alura\Cursos\Controller\RealizaLogin;
+use Alura\Armazenamento\Controller\FormularioInsercaoFormacao;
+use Alura\Armazenamento\Controller\PersistenciaFormacao;
+use Alura\Armazenamento\Controller\ListaDeFormacoes;
 
 return [
     '/listar-cursos' => ListarCursos::class,
@@ -22,4 +25,7 @@ return [
     '/logout' => Logout::class,
     '/cursos-json' => CursosEmJson::class,
     '/cursos-xml' => CursosEmXml::class,
+    '/nova-formacao' => FormularioInsercaoFormacao::class,
+    '/salvar-formacao' => PersistenciaFormacao::class,
+    '/listar-formacoes' => ListaDeFormacoes::class,
 ];
